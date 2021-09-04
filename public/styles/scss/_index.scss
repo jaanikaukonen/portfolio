@@ -1,4 +1,207 @@
-h1 {
-  margin: 5rem;
-  color: blue;
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  #navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    justify-content: space-between;
+    font-weight: $semi-bold;
+    background-color: $white;
+
+    #logo a {
+      color: $dark;
+      text-decoration: none;
+    }
+
+    #nav-links a {
+      margin-left: 0.5rem;
+      color: $dark;
+      text-decoration: none;
+    }
+  }
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.content {
+  // TODO figure out the max width of the content !!!!!
+  max-width: 1000px;
+}
+
+#home {
+  background-color: $white;
+
+  #landing {
+    width: 100%;
+    height: 100vh;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+
+    #greeting {
+      display: flex;
+      flex-wrap: wrap;
+      width: 70%;
+
+      h1 {
+        font-weight: bold;
+        font-size: clamp(3rem, 8vw, 9rem);
+        color: $dark;
+      }
+    }
+  }
+}
+
+#work {
+  background-color: $dark;
+
+  #work-content {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0.5rem;
+
+    h1 {
+      color: $white;
+      font-weight: bold;
+      font-size: clamp(8rem, 25vw, 30rem);
+    }
+
+    h2 {
+      color: $white;
+    }
+
+    #project-one {
+      margin: 3rem 0 3rem 0;
+      border: solid $white 0.01rem;
+      border-radius: 0.3rem;
+      padding: 0.5rem;
+    }
+
+    #project-two {
+      margin: 3rem 0 3rem 0;
+      border: solid $white 0.01rem;
+      border-radius: 0.3rem;
+      padding: 0.5rem;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: row;
+
+      img {
+        width: clamp(20rem, 35vw, 55rem);
+      }
+
+      p {
+        align-self: center;
+      }
+    }
+    @media only screen and (max-width: 700px) {
+      .project {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
+#about {
+  background-color: $white;
+
+  #about-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    padding: 0.5rem;
+  }
+
+  #about-header {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(3rem, 6vw, 8rem);
+    color: $dark;
+  }
+  #about-text-container {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    color: $dark;
+  }
+
+  @media only screen and (max-width: 600px) {
+    #about-content {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #about-text-container {
+      width: 70%;
+      margin-top: 2rem;
+    }
+  }
+}
+
+
+#contact {
+  background-color: $dark;
+
+  #contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 0.5rem;
+
+    h1 {
+      color: $white;
+      font-size: clamp(2rem, 6vw, 5rem);
+      margin: 3rem 0 5rem 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+
+      input {
+        background-color: $dark;
+        color: $white;
+        border: solid 0.1rem $white;
+        border-radius: 0.3rem;
+        height: 3rem;
+        outline: none;
+      }
+
+      label {
+        color: $white;
+        font-weight: $light;
+      }
+
+      #submit {
+        width: 50%;
+        align-self: center;
+      }
+
+    }
+  }
 }

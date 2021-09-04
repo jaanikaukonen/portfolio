@@ -4,9 +4,14 @@
 $font-stack: 'Poppins', sans-serif;
 $light: 400;
 $regular: 500;
+$semi-bold: 600;
 $bold: 700;
 
 // Colors
+$dark: #353238;
+$white: #ffffff;
+$brown: #C1B4AE;
+$accent: #BE5A38;
 
 
 // Resets
@@ -15,4 +20,9 @@ $bold: 700;
   padding: 0;
   box-sizing: border-box;
   font-family: $font-stack;
+  letter-spacing: 0.02rem;
+}
+
+body {
+  max-width: 100vw;
 }
