@@ -42,22 +42,86 @@ section {
 .content {
   max-width: 1000px; }
 
+.accent {
+  color: #BE5A38; }
+
 #home {
   background-color: #ffffff; }
   #home #landing {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0.5rem;
     display: flex;
-    align-items: center; }
+    flex-direction: column;
+    justify-content: center; }
     #home #landing #greeting {
       display: flex;
       flex-wrap: wrap;
       width: 70%; }
       #home #landing #greeting h1 {
         font-weight: bold;
-        font-size: clamp(3rem, 8vw, 9rem);
-        color: #353238; }
+        font-size: clamp(3rem, 8vw, 7rem);
+        color: #353238;
+        margin-top: 3rem;
+        animation: slide 2000ms ease; }
+    #home #landing #introduction {
+      margin-top: 6rem;
+      padding: 0.5rem; }
+      #home #landing #introduction h2 {
+        text-align: end;
+        font-size: clamp(1.2rem, 2.5vw, 2rem);
+        color: #353238;
+        animation: fade 1500ms; }
+
+@keyframes slide {
+  from {
+    transform: translateX(5rem);
+    opacity: 15%; }
+  to {
+    transform: translateX(0);
+    opacity: 100%; } }
+
+@keyframes fade {
+  from {
+    opacity: 15%; }
+  to {
+    opacity: 100%; } }
+
+#first {
+  stroke-dasharray: 973.527099609375;
+  stroke-dashoffset: 973.527099609375;
+  animation: first 1250ms ease;
+  animation-delay: 2100ms;
+  animation-fill-mode: forwards;
+  stroke-width: 0.3rem; }
+
+#second {
+  stroke-dasharray: 499.4190673828125;
+  stroke-dashoffset: 499.4190673828125;
+  animation: second 1000ms ease-out;
+  animation-delay: 3500ms;
+  animation-fill-mode: forwards;
+  stroke-width: 0.3rem; }
+
+#third {
+  stroke-dasharray: 5.901379585266113;
+  stroke-dashoffset: 5.901379585266113;
+  animation: third 250ms ease;
+  animation-delay: 4650ms;
+  animation-fill-mode: forwards;
+  stroke-width: 0.3rem; }
+
+@keyframes first {
+  to {
+    stroke-dashoffset: 0; } }
+
+@keyframes second {
+  to {
+    stroke-dashoffset: 0; } }
+
+@keyframes third {
+  to {
+    stroke-dashoffset: 0; } }
 
 #work {
   background-color: #353238; }
