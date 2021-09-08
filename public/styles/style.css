@@ -12,27 +12,34 @@ body {
 html {
   scroll-behavior: smooth; }
 
-nav {
+header {
   display: flex;
   justify-content: center;
-  width: 100vw; }
-  nav #navbar {
-    position: fixed;
-    top: 0;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 5%;
+  background-color: #ffffff;
+  z-index: 999;
+  transition: 200ms ease-out; }
+  header a {
+    color: #000;
+    text-decoration: none; }
+  header #navbar {
     width: 100vw;
     display: flex;
     flex-direction: row;
     padding: 0.5rem;
     justify-content: space-between;
-    font-weight: 600;
-    background-color: #ffffff; }
-    nav #navbar #logo a {
-      color: #353238;
-      text-decoration: none; }
-    nav #navbar #nav-links a {
-      margin-left: 0.5rem;
-      color: #353238;
-      text-decoration: none; }
+    font-weight: 600; }
+    header #navbar #nav-links a {
+      margin-left: 0.5rem; }
+
+.scrolled {
+  background-color: #000; }
+  .scrolled a {
+    color: #ffffff; }
 
 section {
   display: flex;
@@ -43,13 +50,13 @@ section {
   max-width: 1000px; }
 
 .accent {
-  color: #BE5A38; }
+  color: #cc471c; }
 
 #home {
   background-color: #ffffff; }
   #home #landing {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -60,32 +67,37 @@ section {
       width: 70%; }
       #home #landing #greeting h1 {
         font-weight: bold;
-        font-size: clamp(3rem, 8vw, 7rem);
-        color: #353238;
-        margin-top: 3rem;
+        font-size: clamp(4rem, 8vw, 6rem);
+        color: #000;
+        margin-top: 2rem;
         animation: slide 2000ms ease; }
     #home #landing #introduction {
-      margin-top: 6rem;
+      margin-top: 4rem;
       padding: 0.5rem; }
       #home #landing #introduction h2 {
         text-align: end;
-        font-size: clamp(1.2rem, 2.5vw, 2rem);
-        color: #353238;
-        animation: fade 1500ms; }
+        font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+        color: #000;
+        animation: fade 1500ms;
+        animation-fill-mode: forwards;
+        font-weight: 500; }
 
 @keyframes slide {
   from {
     transform: translateX(5rem);
-    opacity: 15%; }
+    opacity: 5%; }
   to {
     transform: translateX(0);
     opacity: 100%; } }
 
 @keyframes fade {
   from {
-    opacity: 15%; }
+    opacity: 5%; }
   to {
     opacity: 100%; } }
+
+#signature {
+  align-items: center; }
 
 #first {
   stroke-dasharray: 973.527099609375;
@@ -124,7 +136,7 @@ section {
     stroke-dashoffset: 0; } }
 
 #work {
-  background-color: #353238; }
+  background-color: #000; }
   #work #work-content {
     width: 100%;
     min-height: 100vh;
@@ -135,25 +147,21 @@ section {
       font-size: clamp(8rem, 25vw, 30rem); }
     #work #work-content h2 {
       color: #ffffff; }
-    #work #work-content #project-one {
-      margin: 3rem 0 3rem 0;
-      border: solid #ffffff 0.01rem;
-      border-radius: 0.3rem;
-      padding: 0.5rem; }
-    #work #work-content #project-two {
-      margin: 3rem 0 3rem 0;
-      border: solid #ffffff 0.01rem;
-      border-radius: 0.3rem;
-      padding: 0.5rem; }
     #work #work-content .project {
+      margin: 3rem 0 3rem 0;
+      border: solid #ffffff 0.02rem;
+      padding: 0.5rem; }
+    #work #work-content .project-details {
       display: flex;
       flex-direction: row; }
-      #work #work-content .project img {
+      #work #work-content .project-details img {
         width: clamp(20rem, 35vw, 55rem); }
-      #work #work-content .project p {
+      #work #work-content .project-details p {
+        color: #ffffff;
+        font-weight: 350;
         align-self: center; }
     @media only screen and (max-width: 700px) {
-      #work #work-content .project {
+      #work #work-content .project-details {
         flex-direction: column;
         align-items: center; } }
 
@@ -171,13 +179,13 @@ section {
     align-items: center;
     justify-content: center;
     font-size: clamp(3rem, 6vw, 8rem);
-    color: #353238; }
+    color: #000; }
   #about #about-text-container {
     display: flex;
     width: 50%;
     align-items: center;
     justify-content: center;
-    color: #353238; }
+    color: #000; }
   @media only screen and (max-width: 600px) {
     #about #about-content {
       flex-direction: column;
@@ -188,24 +196,24 @@ section {
       margin-top: 2rem; } }
 
 #contact {
-  background-color: #353238; }
+  background-color: #000; }
   #contact #contact-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0.5rem; }
     #contact #contact-content h1 {
       color: #ffffff;
       font-size: clamp(2rem, 6vw, 5rem);
-      margin: 3rem 0 5rem 0; }
+      margin: 5rem 0 5rem 0; }
     #contact #contact-content form {
       display: flex;
       flex-direction: column;
       width: 80%; }
       #contact #contact-content form input {
-        background-color: #353238;
+        background-color: #000;
         color: #ffffff;
         border: solid 0.1rem #ffffff;
         border-radius: 0.3rem;
@@ -213,7 +221,19 @@ section {
         outline: none; }
       #contact #contact-content form label {
         color: #ffffff;
-        font-weight: 400; }
+        font-weight: 300; }
       #contact #contact-content form #submit {
         width: 50%;
         align-self: center; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 3rem;
+  background-color: #000; }
+  footer h2 {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 300; }

@@ -2,34 +2,46 @@ html {
   scroll-behavior: smooth;
 }
 
-nav {
+header {
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
   width: 100vw;
+  height: 5%;
+  background-color: $white;
+  z-index: 999;
+  transition: 200ms ease-out;
+
+  a {
+    color: $dark;
+    text-decoration: none;
+  }
 
   #navbar {
-    position: fixed;
-    top: 0;
     width: 100vw;
     display: flex;
     flex-direction: row;
     padding: 0.5rem;
     justify-content: space-between;
     font-weight: $semi-bold;
-    background-color: $white;
-
-    #logo a {
-      color: $dark;
-      text-decoration: none;
-    }
 
     #nav-links a {
       margin-left: 0.5rem;
-      color: $dark;
-      text-decoration: none;
     }
   }
 }
+
+
+.scrolled {
+  background-color: $dark;
+
+  a {
+    color: $white;
+  }
+}
+
 
 section {
   display: flex;
@@ -51,7 +63,7 @@ section {
 
   #landing {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -64,21 +76,24 @@ section {
 
       h1 {
         font-weight: bold;
-        font-size: clamp(3rem, 8vw, 7rem);
+        font-size: clamp(4rem, 8vw, 6rem);
         color: $dark;
-        margin-top: 3rem;
+        margin-top: 2rem;
         animation: slide 2000ms ease;
       }
     }
+
     #introduction {
-      margin-top: 6rem;
+      margin-top: 4rem;
       padding: 0.5rem;
 
       h2 {
         text-align: end;
-        font-size: clamp(1.2rem, 2.5vw, 2rem);
+        font-size: clamp(0.8rem, 2.5vw, 1.3rem);
         color: $dark;
         animation: fade 1500ms;
+        animation-fill-mode: forwards;
+        font-weight: $regular;
       }
     }
   }
@@ -87,7 +102,7 @@ section {
 @keyframes slide {
   from {
     transform: translateX(5rem);
-    opacity: 15%;
+    opacity: 5%;
   }
 
   to {
@@ -98,12 +113,16 @@ section {
 
 @keyframes fade {
   from {
-    opacity: 15%;
+    opacity: 5%;
   }
 
   to {
     opacity: 100%;
   }
+}
+
+#signature  {
+  align-items: center;
 }
 
 #first {
@@ -114,6 +133,7 @@ section {
   animation-fill-mode: forwards;
   stroke-width: 0.3rem;
 }
+
 #second {
   stroke-dasharray: 499.4190673828125;
   stroke-dashoffset: 499.4190673828125;
@@ -123,6 +143,7 @@ section {
   stroke-width: 0.3rem;
 
 }
+
 #third {
   stroke-dasharray: 5.901379585266113;
   stroke-dashoffset: 5.901379585266113;
@@ -169,21 +190,13 @@ section {
       color: $white;
     }
 
-    #project-one {
-      margin: 3rem 0 3rem 0;
-      border: solid $white 0.01rem;
-      border-radius: 0.3rem;
-      padding: 0.5rem;
-    }
-
-    #project-two {
-      margin: 3rem 0 3rem 0;
-      border: solid $white 0.01rem;
-      border-radius: 0.3rem;
-      padding: 0.5rem;
-    }
-
     .project {
+      margin: 3rem 0 3rem 0;
+      border: solid $white 0.02rem;
+      padding: 0.5rem;
+    }
+
+    .project-details {
       display: flex;
       flex-direction: row;
 
@@ -192,11 +205,14 @@ section {
       }
 
       p {
+        color: $white;
+        font-weight: $semi-light;
         align-self: center;
       }
     }
+
     @media only screen and (max-width: 700px) {
-      .project {
+      .project-details {
         flex-direction: column;
         align-items: center;
       }
@@ -223,6 +239,7 @@ section {
     font-size: clamp(3rem, 6vw, 8rem);
     color: $dark;
   }
+
   #about-text-container {
     display: flex;
     width: 50%;
@@ -254,13 +271,13 @@ section {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0.5rem;
 
     h1 {
       color: $white;
       font-size: clamp(2rem, 6vw, 5rem);
-      margin: 3rem 0 5rem 0;
+      margin: 5rem 0 5rem 0;
     }
 
     form {
@@ -288,5 +305,20 @@ section {
       }
 
     }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 3rem;
+  background-color: $dark;
+
+  h2 {
+    color: $white;
+    font-size: 1rem;
+    font-weight: $light;
   }
 }

@@ -2,16 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
 
 $font-stack: 'Poppins', sans-serif;
-$light: 400;
+$light: 300;
+$semi-light: 350;
 $regular: 500;
 $semi-bold: 600;
 $bold: 700;
 
 // Colors
-$dark: #353238;
+//$dark: #353238;
+//$white: #ffffff;
+//$brown: #C1B4AE;
+//$accent: #BE5A38;
+
+$dark: #000;
 $white: #ffffff;
 $brown: #C1B4AE;
-$accent: #BE5A38;
+$accent: #cc471c;
 
 
 // Resets
