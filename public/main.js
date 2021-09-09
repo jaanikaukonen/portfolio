@@ -38,6 +38,10 @@ contactSectionObserver.observe(contact);
 
 const workText = document.querySelector('#work-header h1');
 
+const options = {
+    rootMargin: '0px 0px -15% 0px'
+}
+
 const workTextObserver = new IntersectionObserver((entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -45,7 +49,7 @@ const workTextObserver = new IntersectionObserver((entries => {
             workText.style.animationFillMode = 'forwards';
         }
     })
-}));
+}),options);
 
 workTextObserver.observe(workText);
 

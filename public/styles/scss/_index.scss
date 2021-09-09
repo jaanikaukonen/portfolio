@@ -176,6 +176,8 @@ section {
       color: $white;
       font-weight: bold;
       font-size: clamp(8rem, 25vw, 30rem);
+      transform: translateX(8rem);
+      opacity: 20%;
     }
 
     h2 {
@@ -213,10 +215,6 @@ section {
 }
 
 @keyframes work {
-  from {
-    transform: translateX(8rem);
-    opacity: 20%;
-  }
   to {
     transform: translateX(-1rem);
     opacity: 100%;
