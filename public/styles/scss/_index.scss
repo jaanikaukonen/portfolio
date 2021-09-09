@@ -76,7 +76,7 @@ section {
 
       h1 {
         font-weight: bold;
-        font-size: clamp(4rem, 8vw, 6rem);
+        font-size: clamp(3.5rem, 8vw, 6rem);
         color: $dark;
         margin-top: 2rem;
         animation: slide 2000ms ease;
@@ -84,12 +84,15 @@ section {
     }
 
     #introduction {
-      margin-top: 4rem;
+      margin-top: 5rem;
       padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
 
       h2 {
         text-align: end;
-        font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+        font-size: clamp(0.9rem, 2.5vw, 1.3rem);
         color: $dark;
         animation: fade 1500ms;
         animation-fill-mode: forwards;
@@ -121,14 +124,14 @@ section {
   }
 }
 
-#signature  {
+#signature {
   align-items: center;
 }
 
 #first {
   stroke-dasharray: 973.527099609375;
   stroke-dashoffset: 973.527099609375;
-  animation: first 1250ms ease;
+  animation: dash 1250ms ease;
   animation-delay: 2100ms;
   animation-fill-mode: forwards;
   stroke-width: 0.3rem;
@@ -137,7 +140,7 @@ section {
 #second {
   stroke-dasharray: 499.4190673828125;
   stroke-dashoffset: 499.4190673828125;
-  animation: second 1000ms ease-out;
+  animation: dash 1000ms ease-out;
   animation-delay: 3500ms;
   animation-fill-mode: forwards;
   stroke-width: 0.3rem;
@@ -147,26 +150,14 @@ section {
 #third {
   stroke-dasharray: 5.901379585266113;
   stroke-dashoffset: 5.901379585266113;
-  animation: third 250ms ease;
-  animation-delay: 4650ms;
+  animation: dash 250ms ease;
+  animation-delay: 4850ms;
   animation-fill-mode: forwards;
   stroke-width: 0.3rem;
 
 }
 
-@keyframes first {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes second {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes third {
+@keyframes dash {
   to {
     stroke-dashoffset: 0;
   }
@@ -179,6 +170,7 @@ section {
     width: 100%;
     min-height: 100vh;
     padding: 0.5rem;
+    overflow: hidden;
 
     h1 {
       color: $white;
@@ -211,7 +203,7 @@ section {
       }
     }
 
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 43.75rem) {
       .project-details {
         flex-direction: column;
         align-items: center;
@@ -219,6 +211,18 @@ section {
     }
   }
 }
+
+@keyframes work {
+  from {
+    transform: translateX(8rem);
+    opacity: 20%;
+  }
+  to {
+    transform: translateX(-1rem);
+    opacity: 100%;
+  }
+}
+
 
 #about {
   background-color: $white;
@@ -236,8 +240,11 @@ section {
     width: 50%;
     align-items: center;
     justify-content: center;
-    font-size: clamp(3rem, 6vw, 8rem);
-    color: $dark;
+    svg text {
+      font-size: 6rem;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+    }
   }
 
   #about-text-container {
@@ -248,15 +255,19 @@ section {
     color: $dark;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 50rem) {
     #about-content {
       flex-direction: column;
       align-items: center;
       justify-content: center;
     }
 
+    #about-header {
+      width: 90%;
+    }
+
     #about-text-container {
-      width: 70%;
+      width: 90%;
       margin-top: 2rem;
     }
   }
@@ -277,7 +288,7 @@ section {
     h1 {
       color: $white;
       font-size: clamp(2rem, 6vw, 5rem);
-      margin: 5rem 0 5rem 0;
+      margin: 5rem 0 1rem 0;
     }
 
     form {
@@ -297,13 +308,26 @@ section {
       label {
         color: $white;
         font-weight: $light;
+        font-size: 1.5rem;
+        margin-top: 1rem;
       }
 
       #submit {
+        background-color: $dark;
+        color: $white;
+        font-weight: $light;
+        font-size: 1.5rem;
         width: 50%;
         align-self: center;
+        margin-top: 2.5rem;
       }
-
+    }
+    #links {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 50%;
+      margin-top: 2.5rem;
     }
   }
 }

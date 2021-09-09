@@ -34,4 +34,32 @@ const contactSectionObserver = new IntersectionObserver(entries => {
 
 contactSectionObserver.observe(contact);
 
+// Animations
+
+const workText = document.querySelector('#work-header h1');
+
+const workTextObserver = new IntersectionObserver((entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            workText.style.animation = 'work 3000ms ease-in-out';
+            workText.style.animationFillMode = 'forwards';
+        }
+    })
+}));
+
+workTextObserver.observe(workText);
+
+const aboutText = document.querySelector('#about-header svg text');
+
+const aboutTextObserver = new IntersectionObserver((entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            aboutText.style.animation = 'dash 5000ms ease-out';
+            aboutText.style.animationFillMode = 'forwards';
+        }
+    })
+}));
+
+aboutTextObserver.observe(aboutText);
+
 
