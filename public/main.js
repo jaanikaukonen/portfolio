@@ -36,10 +36,11 @@ contactSectionObserver.observe(contact);
 
 // Animations
 
+// Work
 const workText = document.querySelector('#work-header h1');
 
 const options = {
-    rootMargin: '0px 0px -15% 0px'
+    rootMargin: '0px 0px -25% 0px'
 }
 
 const workTextObserver = new IntersectionObserver((entries => {
@@ -53,17 +54,33 @@ const workTextObserver = new IntersectionObserver((entries => {
 
 workTextObserver.observe(workText);
 
-const aboutText = document.querySelector('#about-header svg text');
 
-const aboutTextObserver = new IntersectionObserver((entries => {
-    entries.forEach(entry => {
+// Parallax
+const parallax = document.querySelector('#parallax-window');
+const about = document.querySelector('#about-content svg text')
+
+const parallaxOptions = {
+    rootMargin: '0px 0px -50% 0px'
+}
+
+const parallaxWindowObserver = new IntersectionObserver((entries => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            aboutText.style.animation = 'dash 5000ms ease-out';
-            aboutText.style.animationFillMode = 'forwards';
+            about.style.animation = 'dash 2000ms ease';
+            about.style.animationFillMode = 'forwards';
         }
+        console.log(entry.intersectionRatio)
     })
-}));
+}),parallaxOptions);
 
-aboutTextObserver.observe(aboutText);
+parallaxWindowObserver.observe(parallax);
+
+// Form validation and submitting
+
+const submit = document.getElementById('submit');
+
+submit.addEventListener('click', (e) => {
+    e.preventDefault()
+})
 
 

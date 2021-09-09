@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/Asset%202.svg">
     <title>Jaani Kaukonen</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -11,7 +12,15 @@
     <nav>
         <div id="navbar" class="content">
             <div id="logo">
-                <a href="#home">Jaani K.</a>
+                <a href="#home">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                        <g id="Layer_2" data-name="Layer 2">
+                            <g id="Layer_1-2" data-name="Layer 1">
+                                <path d="M500,0C223.86,0,0,223.86,0,500A498.29,498.29,0,0,0,135.35,842.09v-.35h32.54c30.16,0,41.27-11.11,41.27-37.3V302.87H344.87v500c0,77.64-29.27,120.59-76.58,140.33A497.83,497.83,0,0,0,500,1000c276.14,0,500-223.86,500-500S776.14,0,500,0ZM276.62,256.84c-48.41,0-81-32.54-81-73,0-41.26,32.54-73.8,81-73.8,47.61,0,80.15,32.54,80.15,73.8C356.77,224.3,324.23,256.84,276.62,256.84ZM713.1,745.71,578.19,560V745.71H442.48V158.43H578.19V483L712.31,302.87H879.76L695.64,525.08,881.35,745.71Z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </a>
             </div>
             <div id="nav-links">
                 <a href="#work">work</a>
@@ -72,12 +81,13 @@
         </div>
     </div>
 </section>
+<div id="parallax-window"></div>
 <section id="about">
     <div id="about-content" class="content">
         <div id="about-header">
-            <svg height="100" width="1000" stroke="#000" stroke-width="1.5">
-            <text style x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="none">about</text>
-        </svg>
+            <svg height="100" width="1000" stroke="#cc471c" stroke-width="1.5">
+                <text style x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="none">about</text>
+            </svg>
         </div>
         <div id="about-text-container">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi inventore numquam officiis repellat
@@ -96,17 +106,22 @@
             <label for="email">Your email</label>
             <input type="text" id="email" name="email">
             <label for="message">Message</label>
-            <input type="message" id="message" name="message">
+            <input type="text" id="message" name="message">
             <input id="submit" type="submit" value="Submit">
         </form>
         <div id="links">
-            <a href="https://github.com/jaanikaukonen" target="_blank"><img src="images/GitHub-Mark-Light-120px-plus.png" width="50", height="50"></a>
-            <a href="https://www.linkedin.com/in/jaani-kaukonen-4a75031b9" target="_blank"><img src="images/linkedin-4-128.png" width="50", height="50"></a>
+            <a href="https://github.com/jaanikaukonen" target="_blank"><img
+                    src="images/GitHub-Mark-Light-120px-plus.png" width="50" , height="50"></a>
+            <a href="https://www.linkedin.com/in/jaani-kaukonen-4a75031b9" target="_blank"><img
+                    src="images/linkedin-4-128.png" width="50" , height="50"></a>
         </div>
     </div>
 </section>
 <footer>
-    <h2>Copyright &copy <script type="text/javascript">document.write(new Date().getFullYear().toString())</script> Jaani Kaukonen</h2>
+    <h2>Copyright &copy
+        <script type="text/javascript">document.write(new Date().getFullYear().toString())</script>
+        Jaani Kaukonen
+    </h2>
 </footer>
 <script src="main.js"></script>
 </body>
