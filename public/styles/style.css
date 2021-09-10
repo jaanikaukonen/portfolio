@@ -37,12 +37,14 @@ header {
       width: 20px;
       fill: #cc471c; }
     header #navbar #nav-links a {
-      margin-left: 0.5rem; }
+      margin-left: 0.5rem;
+      text-shadow: 0.05rem 0.05rem 0.09rem rgba(63, 63, 63, 0.55); }
 
 .scrolled {
   background-color: #000; }
   .scrolled a {
-    color: #ffffff; }
+    color: #ffffff;
+    text-shadow: 0.09rem 0.09rem 0.1rem rgba(63, 63, 63, 0.55); }
 
 section {
   display: flex;
@@ -50,7 +52,7 @@ section {
   width: 100vw; }
 
 .content {
-  max-width: 2000px; }
+  max-width: 100rem; }
 
 .accent {
   color: #cc471c; }
@@ -59,7 +61,7 @@ section {
   background-color: #ffffff; }
   #home #landing {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -70,10 +72,11 @@ section {
       width: 70%; }
       #home #landing #greeting h1 {
         font-weight: bold;
-        font-size: clamp(3.5rem, 8vw, 6rem);
+        font-size: clamp(3.5rem, 8vw, 9rem);
         color: #000;
         margin-top: 2rem;
-        animation: slide 2000ms ease; }
+        animation: slide 2000ms ease;
+        text-shadow: 0.1rem 0.1rem 0.4rem rgba(63, 63, 63, 0.55); }
     #home #landing #introduction {
       margin-top: 5rem;
       padding: 0.5rem;
@@ -86,34 +89,78 @@ section {
         color: #000;
         animation: fade 1500ms;
         animation-fill-mode: forwards;
-        font-weight: 500; }
-
-#signature {
-  align-items: center; }
-
-#first {
-  stroke-dasharray: 973.527099609375;
-  stroke-dashoffset: 973.527099609375;
-  animation: dash 1250ms ease;
-  animation-delay: 2100ms;
-  animation-fill-mode: forwards;
-  stroke-width: 0.3rem; }
-
-#second {
-  stroke-dasharray: 499.4190673828125;
-  stroke-dashoffset: 499.4190673828125;
-  animation: dash 1000ms ease-out;
-  animation-delay: 3500ms;
-  animation-fill-mode: forwards;
-  stroke-width: 0.3rem; }
-
-#third {
-  stroke-dasharray: 5.901379585266113;
-  stroke-dashoffset: 5.901379585266113;
-  animation: dash 250ms ease;
-  animation-delay: 4850ms;
-  animation-fill-mode: forwards;
-  stroke-width: 0.3rem; }
+        font-weight: 500;
+        text-shadow: 0.05rem 0.05rem 0.09rem rgba(63, 63, 63, 0.55); }
+        #home #landing #introduction h2 span {
+          text-shadow: 0.05rem 0.05rem 0.09rem #cc471c; }
+      #home #landing #introduction #first {
+        stroke-dasharray: 973.527099609375;
+        stroke-dashoffset: 973.527099609375;
+        animation: dash 1250ms ease;
+        animation-delay: 1900ms;
+        animation-fill-mode: forwards;
+        -webkit-animation: dash 1250ms ease;
+        -webkit-animation-delay: 1900ms;
+        -webkit-animation-fill-mode: forwards;
+        stroke-width: 0.3rem; }
+      #home #landing #introduction #second {
+        stroke-dasharray: 499.4190673828125;
+        stroke-dashoffset: 499.4190673828125;
+        animation: dash 1000ms ease-out;
+        animation-delay: 3300ms;
+        animation-fill-mode: forwards;
+        -webkit-animation: dash 1000ms ease-out;
+        -webkit-animation-delay: 3300ms;
+        -webkit-animation-fill-mode: forwards;
+        stroke-width: 0.3rem; }
+      #home #landing #introduction #third {
+        stroke-dasharray: 5.901379585266113;
+        stroke-dashoffset: 5.901379585266113;
+        animation: dash 250ms ease;
+        animation-delay: 4650ms;
+        animation-fill-mode: forwards;
+        -webkit-animation: dash 250ms ease;
+        -webkit-animation-delay: 4650ms;
+        -webkit-animation-fill-mode: forwards;
+        stroke-width: 0.3rem; }
+    #home #landing #scroll-indicator {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      opacity: 0.5; }
+      #home #landing #scroll-indicator #scroll-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translate(-50%); }
+      #home #landing #scroll-indicator #mouse {
+        display: flex;
+        width: 1.25rem;
+        height: 2.5rem;
+        border: 0.125rem solid #000;
+        border-radius: 2rem;
+        margin-bottom: 0.5rem; }
+        #home #landing #scroll-indicator #mouse span {
+          width: 0.5rem;
+          height: 0.5rem;
+          background-color: #000;
+          display: block;
+          border-radius: 50%;
+          margin: auto;
+          animation: move-wheel 1000ms linear infinite; }
+      #home #landing #scroll-indicator #arrow span {
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 0.125rem solid transparent;
+        border-right-color: #000;
+        border-bottom-color: #000;
+        transform: rotate(45deg);
+        animation: arrow-down 500ms alternate infinite; }
 
 #work {
   background-color: #000; }
@@ -135,17 +182,39 @@ section {
       padding: 0.5rem; }
     #work #work-content .project-details {
       display: flex;
-      flex-direction: row; }
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly; }
       #work #work-content .project-details img {
-        width: clamp(20rem, 35vw, 55rem); }
-      #work #work-content .project-details p {
-        color: #ffffff;
-        font-weight: 350;
-        align-self: center; }
-    @media only screen and (max-width: 43.75rem) {
+        width: 50%; }
+      #work #work-content .project-details #project-detail-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem; }
+        #work #work-content .project-details #project-detail-container h3 {
+          color: #ffffff;
+          font-weight: 500;
+          font-size: 1rem;
+          margin: 0.5rem 0 0.5rem 0; }
+        #work #work-content .project-details #project-detail-container ul {
+          list-style-position: inside; }
+          #work #work-content .project-details #project-detail-container ul li {
+            font-size: 0.8rem;
+            color: #ffffff;
+            font-weight: 500; }
+        #work #work-content .project-details #project-detail-container a {
+          align-self: center;
+          margin-top: 1rem;
+          text-decoration: underline;
+          font-size: 1rem;
+          font-weight: 500;
+          color: #ffffff; }
+    @media only screen and (max-width: 60rem) {
       #work #work-content .project-details {
         flex-direction: column;
-        align-items: center; } }
+        align-items: center; }
+        #work #work-content .project-details img {
+          width: 90%; } }
 
 #parallax-window {
   height: 100vh; }
@@ -167,17 +236,17 @@ section {
     width: 50%;
     align-items: center;
     justify-content: center; }
-    #about #about-header svg text {
-      font-size: 6rem;
-      stroke-dasharray: 287.6159973144531;
-      stroke-dashoffset: 287.6159973144531; }
+    #about #about-header .letter {
+      stroke-dasharray: 1500;
+      stroke-dashoffset: 1500; }
   #about #about-text-container {
     display: flex;
     width: 50%;
     align-items: center;
     justify-content: center;
-    color: #000; }
-  @media only screen and (max-width: 50rem) {
+    color: #000;
+    text-shadow: 0.09rem 0.09rem 0.1rem rgba(63, 63, 63, 0.55); }
+  @media only screen and (max-width: 60rem) {
     #about #about-content {
       flex-direction: column;
       align-items: center;
@@ -256,10 +325,10 @@ footer {
 
 @-webkit-keyframes slide {
   from {
-    transform: translateX(5rem);
+    -webkit-transform: translateX(5rem);
     opacity: 5%; }
   to {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
     opacity: 100%; } }
 
 @keyframes fade {
@@ -289,5 +358,25 @@ footer {
 
 @-webkit-keyframes work {
   to {
-    transform: translateX(-1rem);
+    -webkit-transform: translateX(-1rem);
     opacity: 100%; } }
+
+@keyframes move-wheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(1rem); } }
+
+@keyframes arrow-down {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0.25; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.75; }
+  100% {
+    opacity: 1; } }

@@ -6,6 +6,13 @@ const header = document.querySelector("header");
 const work = document.querySelector("#work");
 const contact = document.querySelector("#contact");
 
+// Scroll down indicator
+
+const div = document.querySelector('#scroll-indicator');
+setTimeout(() => {
+    div.style.display = 'flex';
+}, 8000);
+
 const sectionOptions = {
     rootMargin: '0px 0px -95% 0px',
 };
@@ -16,6 +23,9 @@ const workSectionObserver = new IntersectionObserver(entries => {
             header.classList.remove('scrolled');
         } else {
             header.classList.add('scrolled')
+            if (div.style.display === 'flex') {
+                div.style.display = 'none';
+            }
         }
     })
 },sectionOptions);
@@ -57,7 +67,7 @@ workTextObserver.observe(workText);
 
 // Parallax
 const parallax = document.querySelector('#parallax-window');
-const about = document.querySelector('#about-content svg text')
+const about = document.querySelectorAll('.letter');
 
 const parallaxOptions = {
     rootMargin: '0px 0px -50% 0px'
@@ -66,10 +76,11 @@ const parallaxOptions = {
 const parallaxWindowObserver = new IntersectionObserver((entries => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            about.style.animation = 'dash 2000ms ease';
-            about.style.animationFillMode = 'forwards';
+            about.forEach(letter => {
+                letter.style.animation = 'dash 3500ms ease';
+                letter.style.animationFillMode = 'forwards';
+            });
         }
-        console.log(entry.intersectionRatio)
     })
 }),parallaxOptions);
 

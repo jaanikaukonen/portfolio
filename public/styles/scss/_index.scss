@@ -33,6 +33,7 @@ header {
     }
     #nav-links a {
       margin-left: 0.5rem;
+      text-shadow: 0.05rem 0.05rem 0.09rem $shadow;
     }
   }
 }
@@ -43,6 +44,7 @@ header {
 
   a {
     color: $white;
+    text-shadow: 0.09rem 0.09rem 0.1rem $shadow;
   }
 }
 
@@ -55,7 +57,7 @@ section {
 
 .content {
   // TODO figure out the max width of the content !!!!!
-  max-width: 2000px;
+  max-width: 100rem;
 }
 
 .accent {
@@ -67,7 +69,7 @@ section {
 
   #landing {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -80,10 +82,11 @@ section {
 
       h1 {
         font-weight: bold;
-        font-size: clamp(3.5rem, 8vw, 6rem);
+        font-size: clamp(3.5rem, 8vw, 9rem);
         color: $dark;
         margin-top: 2rem;
         animation: slide 2000ms ease;
+        text-shadow: 0.1rem 0.1rem 0.4rem $shadow;
       }
     }
 
@@ -101,42 +104,99 @@ section {
         animation: fade 1500ms;
         animation-fill-mode: forwards;
         font-weight: $regular;
+        text-shadow: 0.05rem 0.05rem 0.09rem $shadow;
+        span {
+          text-shadow: 0.05rem 0.05rem 0.09rem $accent;
+        }
+      }
+      #first {
+        stroke-dasharray: 973.527099609375;
+        stroke-dashoffset: 973.527099609375;
+        animation: dash 1250ms ease;
+        animation-delay: 1900ms;
+        animation-fill-mode: forwards;
+        -webkit-animation: dash 1250ms ease;
+        -webkit-animation-delay: 1900ms;
+        -webkit-animation-fill-mode: forwards;
+        stroke-width: 0.3rem;
+      }
+
+      #second {
+        stroke-dasharray: 499.4190673828125;
+        stroke-dashoffset: 499.4190673828125;
+        animation: dash 1000ms ease-out;
+        animation-delay: 3300ms;
+        animation-fill-mode: forwards;
+        -webkit-animation: dash 1000ms ease-out;
+        -webkit-animation-delay: 3300ms;
+        -webkit-animation-fill-mode: forwards;
+        stroke-width: 0.3rem;
+      }
+
+      #third {
+        stroke-dasharray: 5.901379585266113;
+        stroke-dashoffset: 5.901379585266113;
+        animation: dash 250ms ease;
+        animation-delay: 4650ms;
+        animation-fill-mode: forwards;
+        -webkit-animation: dash 250ms ease;
+        -webkit-animation-delay: 4650ms;
+        -webkit-animation-fill-mode: forwards;
+        stroke-width: 0.3rem;
+      }
+    }
+
+    #scroll-indicator {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      opacity: 0.5;
+
+      #scroll-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translate(-50%);
+
+      }
+
+      #mouse {
+        display: flex;
+        width: 1.25rem;
+        height: 2.5rem;
+        border: 0.125rem solid $dark;
+        border-radius: 2rem;
+        margin-bottom: 0.5rem;
+
+        span {
+          width: 0.5rem;
+          height: 0.5rem;
+          background-color: $dark;
+          display: block;
+          border-radius: 50%;
+          margin: auto;
+          animation: move-wheel 1000ms linear infinite;
+        }
+      }
+
+      #arrow {
+        span {
+          display: block;
+          width: 0.5rem;
+          height: 0.5rem;
+          border: 0.125rem solid transparent;
+          border-right-color: $dark;
+          border-bottom-color: $dark;
+          transform: rotate(45deg);
+          animation: arrow-down 500ms alternate infinite;
+        }
       }
     }
   }
-}
-
-#signature {
-  align-items: center;
-}
-
-#first {
-  stroke-dasharray: 973.527099609375;
-  stroke-dashoffset: 973.527099609375;
-  animation: dash 1250ms ease;
-  animation-delay: 2100ms;
-  animation-fill-mode: forwards;
-  stroke-width: 0.3rem;
-}
-
-#second {
-  stroke-dasharray: 499.4190673828125;
-  stroke-dashoffset: 499.4190673828125;
-  animation: dash 1000ms ease-out;
-  animation-delay: 3500ms;
-  animation-fill-mode: forwards;
-  stroke-width: 0.3rem;
-
-}
-
-#third {
-  stroke-dasharray: 5.901379585266113;
-  stroke-dashoffset: 5.901379585266113;
-  animation: dash 250ms ease;
-  animation-delay: 4850ms;
-  animation-fill-mode: forwards;
-  stroke-width: 0.3rem;
-
 }
 
 
@@ -170,22 +230,52 @@ section {
     .project-details {
       display: flex;
       flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
 
       img {
-        width: clamp(20rem, 35vw, 55rem);
+        width: 50%;
       }
 
-      p {
-        color: $white;
-        font-weight: $semi-light;
-        align-self: center;
+      #project-detail-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+
+        h3 {
+          color: $white;
+          font-weight: $regular;
+          font-size: 1rem;
+          margin: 0.5rem 0 0.5rem 0;
+        }
+        ul {
+          list-style-position: inside;
+
+          li {
+            font-size: 0.8rem;
+            color: $white;
+            font-weight: $regular;
+          }
+        }
+        a {
+          align-self: center;
+          margin-top: 1rem;
+          text-decoration: underline;
+          font-size: 1rem;
+          font-weight: $regular;
+          color: $white;
+        }
       }
     }
 
-    @media only screen and (max-width: 43.75rem) {
+    @media only screen and (max-width: 60rem) {
       .project-details {
         flex-direction: column;
         align-items: center;
+
+        img {
+          width: 90%;
+        }
       }
     }
   }
@@ -216,10 +306,9 @@ section {
     width: 50%;
     align-items: center;
     justify-content: center;
-    svg text {
-      font-size: 6rem;
-      stroke-dasharray: 287.6159973144531;
-      stroke-dashoffset: 287.6159973144531;
+    .letter {
+      stroke-dasharray: 1500;
+      stroke-dashoffset: 1500;
     }
   }
 
@@ -229,9 +318,10 @@ section {
     align-items: center;
     justify-content: center;
     color: $dark;
+    text-shadow: 0.09rem 0.09rem 0.1rem $shadow;
   }
 
-  @media only screen and (max-width: 50rem) {
+  @media only screen and (max-width: 60rem) {
     #about-content {
       flex-direction: column;
       align-items: center;
@@ -341,12 +431,12 @@ footer {
 
 @-webkit-keyframes slide {
   from {
-    transform: translateX(5rem);
+    -webkit-transform: translateX(5rem);
     opacity: 5%;
   }
 
   to {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
     opacity: 100%;
   }
 }
@@ -392,7 +482,41 @@ footer {
 
 @-webkit-keyframes work {
   to {
-    transform: translateX(-1rem);
+    -webkit-transform: translateX(-1rem);
     opacity: 100%;
+  }
+}
+
+@keyframes move-wheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(1rem);
+  }
+}
+
+@keyframes arrow-down {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
