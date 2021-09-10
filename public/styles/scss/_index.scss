@@ -106,28 +106,6 @@ section {
   }
 }
 
-@keyframes slide {
-  from {
-    transform: translateX(5rem);
-    opacity: 5%;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 100%;
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 5%;
-  }
-
-  to {
-    opacity: 100%;
-  }
-}
-
 #signature {
   align-items: center;
 }
@@ -161,11 +139,6 @@ section {
 
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 
 #work {
   background-color: $dark;
@@ -215,13 +188,6 @@ section {
         align-items: center;
       }
     }
-  }
-}
-
-@keyframes work {
-  to {
-    transform: translateX(-1rem);
-    opacity: 100%;
   }
 }
 
@@ -307,6 +273,9 @@ section {
       width: 80%;
 
       input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         background-color: $dark;
         color: $white;
         border: solid 0.1rem $white;
@@ -353,5 +322,77 @@ footer {
     color: $white;
     font-size: 1rem;
     font-weight: $light;
+  }
+}
+
+// Animations
+
+@keyframes slide {
+  from {
+    transform: translateX(5rem);
+    opacity: 5%;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes slide {
+  from {
+    transform: translateX(5rem);
+    opacity: 5%;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 5%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 5%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes work {
+  to {
+    transform: translateX(-1rem);
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes work {
+  to {
+    transform: translateX(-1rem);
+    opacity: 100%;
   }
 }
