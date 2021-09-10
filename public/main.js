@@ -11,7 +11,7 @@ const contact = document.querySelector("#contact");
 const div = document.querySelector('#scroll-indicator');
 setTimeout(() => {
     div.style.display = 'flex';
-}, 8000);
+}, 6500);
 
 const sectionOptions = {
     rootMargin: '0px 0px -95% 0px',

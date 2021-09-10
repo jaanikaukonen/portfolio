@@ -69,7 +69,7 @@ section {
 
   #landing {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -158,7 +158,6 @@ section {
         flex-direction: column;
         align-items: center;
         position: absolute;
-        bottom: 3rem;
         left: 50%;
         transform: translate(-50%);
 
