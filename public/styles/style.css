@@ -369,7 +369,27 @@ footer {
     opacity: 1;
     transform: translateY(1rem); } }
 
+@-webkit-keyframes move-wheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(1rem); } }
+
 @keyframes arrow-down {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0.25; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.75; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes arrow-down {
   0% {
     opacity: 0; }
   25% {
