@@ -221,9 +221,16 @@ section {
     }
 
     .project {
+      display: flex;
+      flex-direction: column;
       margin: 3rem 0 3rem 0;
       //border: solid $white 0.02rem;
       padding: 0.5rem;
+
+      h2 {
+        align-self: center;
+        margin-bottom: 2rem;
+      }
     }
 
     .project-details {
@@ -240,9 +247,11 @@ section {
         display: flex;
         flex-direction: column;
         padding: 0.5rem;
+        border-radius: 1rem;
+        background-color: #1a1515;
 
         h3 {
-          color: $white;
+          color: $accent;
           font-weight: $regular;
           font-size: 1rem;
           margin: 0.5rem 0 0.5rem 0;

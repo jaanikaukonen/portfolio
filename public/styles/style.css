@@ -24,7 +24,7 @@ header {
   z-index: 999;
   transition: 200ms ease-out; }
   header a {
-    color: #000;
+    color: #000000;
     text-decoration: none; }
   header #navbar {
     width: 100vw;
@@ -41,7 +41,7 @@ header {
       text-shadow: 0.05rem 0.05rem 0.09rem rgba(63, 63, 63, 0.55); }
 
 .scrolled {
-  background-color: #000; }
+  background-color: #000000; }
   .scrolled a {
     color: #ffffff;
     text-shadow: 0.09rem 0.09rem 0.1rem rgba(63, 63, 63, 0.55); }
@@ -73,7 +73,7 @@ section {
       #home #landing #greeting h1 {
         font-weight: bold;
         font-size: clamp(3.5rem, 8vw, 9rem);
-        color: #000;
+        color: #000000;
         margin-top: 2rem;
         animation: slide 2000ms ease;
         text-shadow: 0.1rem 0.1rem 0.4rem rgba(63, 63, 63, 0.55); }
@@ -86,7 +86,7 @@ section {
       #home #landing #introduction h2 {
         text-align: end;
         font-size: clamp(0.9rem, 2.5vw, 1.3rem);
-        color: #000;
+        color: #000000;
         animation: fade 1500ms;
         animation-fill-mode: forwards;
         font-weight: 500;
@@ -140,13 +140,13 @@ section {
         display: flex;
         width: 1.25rem;
         height: 2.5rem;
-        border: 0.125rem solid #000;
+        border: 0.125rem solid #000000;
         border-radius: 2rem;
         margin-bottom: 0.5rem; }
         #home #landing #scroll-indicator #mouse span {
           width: 0.5rem;
           height: 0.5rem;
-          background-color: #000;
+          background-color: #000000;
           display: block;
           border-radius: 50%;
           margin: auto;
@@ -156,13 +156,13 @@ section {
         width: 0.5rem;
         height: 0.5rem;
         border: 0.125rem solid transparent;
-        border-right-color: #000;
-        border-bottom-color: #000;
+        border-right-color: #000000;
+        border-bottom-color: #000000;
         transform: rotate(45deg);
         animation: arrow-down 500ms alternate infinite; }
 
 #work {
-  background-color: #000; }
+  background-color: #000000; }
   #work #work-content {
     width: 100%;
     min-height: 100vh;
@@ -177,8 +177,13 @@ section {
     #work #work-content h2 {
       color: #ffffff; }
     #work #work-content .project {
+      display: flex;
+      flex-direction: column;
       margin: 3rem 0 3rem 0;
       padding: 0.5rem; }
+      #work #work-content .project h2 {
+        align-self: center;
+        margin-bottom: 2rem; }
     #work #work-content .project-details {
       display: flex;
       flex-direction: row;
@@ -189,9 +194,11 @@ section {
       #work #work-content .project-details #project-detail-container {
         display: flex;
         flex-direction: column;
-        padding: 0.5rem; }
+        padding: 0.5rem;
+        border-radius: 1rem;
+        background-color: #1a1515; }
         #work #work-content .project-details #project-detail-container h3 {
-          color: #ffffff;
+          color: #cc471c;
           font-weight: 500;
           font-size: 1rem;
           margin: 0.5rem 0 0.5rem 0; }
@@ -243,7 +250,7 @@ section {
     width: 50%;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: #000000;
     text-shadow: 0.09rem 0.09rem 0.1rem rgba(63, 63, 63, 0.55); }
   @media only screen and (max-width: 60rem) {
     #about #about-content {
@@ -257,7 +264,7 @@ section {
       margin-top: 2rem; } }
 
 #contact {
-  background-color: #000; }
+  background-color: #000000; }
   #contact #contact-content {
     display: flex;
     flex-direction: column;
@@ -277,7 +284,7 @@ section {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        background-color: #000;
+        background-color: #000000;
         color: #ffffff;
         border: solid 0.1rem #ffffff;
         border-radius: 0.1rem;
@@ -308,7 +315,7 @@ footer {
   align-items: center;
   width: 100vw;
   height: 3rem;
-  background-color: #000; }
+  background-color: #000000; }
   footer h2 {
     color: #ffffff;
     font-size: 1rem;
