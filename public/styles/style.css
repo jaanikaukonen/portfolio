@@ -295,7 +295,10 @@ section {
     #contact #contact-header h2 {
       display: flex;
       flex-wrap: wrap;
-      color: #ffffff; }
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: 350;
+      font-style: italic; }
     #contact #contact-header #sayHi {
       align-self: center;
       margin-top: 3rem;
@@ -333,14 +336,16 @@ footer {
       margin: 0 1rem 0 0; }
     footer #contact-info #links a:hover {
       color: #000000; }
-    footer #contact-info #sitemap h3 {
-      margin: 0.5rem 0 0.5rem 0; }
-    footer #contact-info #sitemap a {
-      text-decoration: none;
-      color: #cc471c;
-      margin: 0 1rem 0 0; }
-    footer #contact-info #sitemap a:hover {
-      color: #000000; }
+    footer #contact-info #sitemap {
+      display: flex;
+      flex-direction: column; }
+      footer #contact-info #sitemap h3 {
+        margin: 0.5rem 0 0.5rem 0; }
+      footer #contact-info #sitemap a {
+        text-decoration: none;
+        color: #cc471c; }
+      footer #contact-info #sitemap a:hover {
+        color: #000000; }
   footer #socialIcons {
     display: flex;
     width: 25%;
