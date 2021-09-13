@@ -255,9 +255,9 @@ section {
         background-color: rgba(28, 27, 27, 0.99);
 
         h3 {
-          color: $white;
+          color: $accent;
           font-weight: $regular;
-          font-size: 1rem;
+          font-size: 1.1rem;
           margin: 0.7rem 0 0.7rem 0;
         }
         ul {
@@ -277,13 +277,13 @@ section {
           padding: 0.5rem;
           border-radius: 0.2rem;
           font-weight: $regular;
-          background-color: $accent;
-          color: $white;
+          background-color: $white;
+          color: $accent;
         }
 
         #link-button:hover {
-          background-color: $white;
-          color: $accent;
+          background-color: $accent;
+          color: $white;
         }
       }
     }

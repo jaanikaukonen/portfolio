@@ -202,9 +202,9 @@ section {
         margin-top: 1rem;
         background-color: rgba(28, 27, 27, 0.99); }
         #work #work-content .project-details #project-detail-container h3 {
-          color: #ffffff;
+          color: #cc471c;
           font-weight: 500;
-          font-size: 1rem;
+          font-size: 1.1rem;
           margin: 0.7rem 0 0.7rem 0; }
         #work #work-content .project-details #project-detail-container ul {
           list-style-position: inside; }
@@ -220,11 +220,11 @@ section {
           padding: 0.5rem;
           border-radius: 0.2rem;
           font-weight: 500;
-          background-color: #cc471c;
-          color: #ffffff; }
-        #work #work-content .project-details #project-detail-container #link-button:hover {
           background-color: #ffffff;
           color: #cc471c; }
+        #work #work-content .project-details #project-detail-container #link-button:hover {
+          background-color: #cc471c;
+          color: #ffffff; }
     @media only screen and (max-width: 60rem) {
       #work #work-content .project-details {
         flex-direction: column;
