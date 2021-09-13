@@ -398,12 +398,12 @@ section {
       padding: 0.5rem;
       border-radius: 0.2rem;
       font-weight: $regular;
-      background-color: $white;
-      color: $dark;
-    }
-    #sayHi:hover {
       background-color: $accent;
       color: $white;
+    }
+    #sayHi:hover {
+      background-color: $white;
+      color: $accent;
     }
   }
 }

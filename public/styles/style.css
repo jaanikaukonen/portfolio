@@ -305,11 +305,11 @@ section {
       padding: 0.5rem;
       border-radius: 0.2rem;
       font-weight: 500;
-      background-color: #ffffff;
-      color: #000000; }
-    #contact #contact-header #sayHi:hover {
       background-color: #cc471c;
       color: #ffffff; }
+    #contact #contact-header #sayHi:hover {
+      background-color: #ffffff;
+      color: #cc471c; }
 
 footer {
   display: flex;

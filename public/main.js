@@ -70,32 +70,49 @@ const parallax = document.querySelector('#parallax-window');
 const aboutLetters = document.querySelectorAll('.letter');
 const about = document.querySelector('#about');
 
+
+// About text animation
 const parallaxOptions = {
-    rootMargin: '0px 0px 0px 0px'
+    rootMargin: '0px 0px -60% 0px'
 }
 
 const parallaxWindowObserver = new IntersectionObserver((entries => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            about.style.display = 'block';
+            console.log('Observing')
             aboutLetters.forEach(letter => {
                 letter.style.animation = 'dash 3500ms ease';
                 letter.style.animationFillMode = 'forwards';
             });
-        } else {
-            about.style.display = 'none';
+            setTimeout(() => {
+                aboutLetters.forEach(letter => {
+                    letter.style.animation = 'none';
+                    letter.style.strokeDashoffset = '0';
+                });
+                parallaxWindowObserver.unobserve(parallax);
+            },3500);
         }
     })
 }), parallaxOptions);
 
 parallaxWindowObserver.observe(parallax);
 
-// Form validation and submitting
 
-const submit = document.getElementById('submit');
+// About section
+const aboutOptions = {
+    rootMargin: '0px 0px 0px 0px'
+}
 
-submit.addEventListener('click', (e) => {
-    e.preventDefault()
-})
+const aboutObserver = new IntersectionObserver((entries => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            about.style.display = 'block';
+        } else {
+            about.style.display = 'none';
+        }
+    })
+}), aboutOptions);
+
+aboutObserver.observe(parallax);
 
 
