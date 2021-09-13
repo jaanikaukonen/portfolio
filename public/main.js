@@ -28,7 +28,7 @@ const workSectionObserver = new IntersectionObserver(entries => {
             }
         }
     })
-},sectionOptions);
+}, sectionOptions);
 
 workSectionObserver.observe(work);
 
@@ -40,7 +40,7 @@ const contactSectionObserver = new IntersectionObserver(entries => {
             header.classList.add('scrolled')
         }
     })
-},sectionOptions);
+}, sectionOptions);
 
 contactSectionObserver.observe(contact);
 
@@ -60,29 +60,33 @@ const workTextObserver = new IntersectionObserver((entries => {
             workText.style.animationFillMode = 'forwards';
         }
     })
-}),options);
+}), options);
 
 workTextObserver.observe(workText);
 
 
 // Parallax
 const parallax = document.querySelector('#parallax-window');
-const about = document.querySelectorAll('.letter');
+const aboutLetters = document.querySelectorAll('.letter');
+const about = document.querySelector('#about');
 
 const parallaxOptions = {
-    rootMargin: '0px 0px -50% 0px'
+    rootMargin: '0px 0px 0px 0px'
 }
 
 const parallaxWindowObserver = new IntersectionObserver((entries => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            about.forEach(letter => {
+            about.style.display = 'block';
+            aboutLetters.forEach(letter => {
                 letter.style.animation = 'dash 3500ms ease';
                 letter.style.animationFillMode = 'forwards';
             });
+        } else {
+            about.style.display = 'none';
         }
     })
-}),parallaxOptions);
+}), parallaxOptions);
 
 parallaxWindowObserver.observe(parallax);
 
